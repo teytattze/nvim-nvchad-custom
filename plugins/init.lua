@@ -1,5 +1,3 @@
-require "custom.plugins.configs.overrides"
-
 local plugins = {
   {
     "NvChad/nvterm",
@@ -44,6 +42,16 @@ local plugins = {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = require "custom.plugins.configs.treesitter",
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = require "custom.plugins.configs.nvimtree",
+  },
+
+  {
     "scalameta/nvim-metals",
     config = function()
       require "custom.plugins.configs.metals"
@@ -56,6 +64,11 @@ local plugins = {
     config = function()
       require "custom.plugins.configs.conform"
     end,
+  },
+
+  {
+    "williamboman/mason.nvim",
+    opts = require "custom.plugins.configs.mason",
   },
 }
 

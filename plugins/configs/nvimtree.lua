@@ -1,4 +1,7 @@
 local options = {
+  view = {
+    width = 48,
+  },
   git = {
     enable = true,
   },

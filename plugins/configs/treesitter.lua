@@ -12,7 +12,6 @@ local options = {
     "lua",
     "markdown",
     "markdown_inline",
-    "sql",
     "tsx",
     "typescript",
   },

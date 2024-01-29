@@ -14,6 +14,7 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 local nvim_metals_group = augroup("nvim-metals", { clear = true })
+
 autocmd("FileType", {
   pattern = { "scala", "sbt", "java" },
   callback = function()

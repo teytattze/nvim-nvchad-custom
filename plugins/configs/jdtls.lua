@@ -17,19 +17,6 @@ local jdtls_jar_path = jdtls_path .. "/plugins/org.eclipse.equinox.launcher_1.6.
 
 local config = {}
 
-config.capabilities = {
-  workspace = {
-    configuration = true,
-  },
-  textDocument = {
-    completion = {
-      completionItem = {
-        snippetSupport = true,
-      },
-    },
-  },
-}
-
 config.cmd = {
   -- 💀
   "java", -- or '/path/to/java17_or_newer/bin/java'
@@ -115,6 +102,9 @@ config.settings = {
 }
 
 config.on_attach = on_attach
+config.capabilities = capabilities
+config.capabilities.workspace.configuration = true
+
 config.on_init = function(client, _)
   client.notify("workspace/didChangeConfiguration", { settings = config.settings })
 end

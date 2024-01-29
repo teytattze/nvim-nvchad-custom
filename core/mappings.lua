@@ -55,21 +55,21 @@ M.lspconfig = {
 
 M.tabufline = {
   n = {
-    ["]b"] = {
+    ["<S-l>"] = {
       function()
         require("nvchad.tabufline").tabuflineNext()
       end,
       "Goto next buffer",
     },
 
-    ["[b"] = {
+    ["<S-h>"] = {
       function()
         require("nvchad.tabufline").tabuflinePrev()
       end,
       "Goto prev buffer",
     },
 
-    ["bd"] = {
+    ["<leader>bd"] = {
       function()
         require("nvchad.tabufline").close_buffer()
       end,
