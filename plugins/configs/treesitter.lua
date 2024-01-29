@@ -10,8 +10,6 @@ local options = {
     "java",
     "javascript",
     "lua",
-    "markdown",
-    "markdown_inline",
     "tsx",
     "typescript",
   },
