@@ -1,3 +1,5 @@
+vim.g.copilot_assume_mapped = true
+
 local opt = vim.opt
 
 opt.colorcolumn = "80"

@@ -13,6 +13,10 @@ M.disabled = {
     ["<leader>n"] = "",
     ["<leader>rn"] = "",
 
+    -- lsp
+    ["gi"] = "",
+    ["<leader>ls"] = "",
+
     -- nvterm
     ["<A-i>"] = "",
     ["<A-h>"] = "",
@@ -49,7 +53,66 @@ M.general = {
 
 M.lspconfig = {
   n = {
-    ["<leader>rn"] = { vim.lsp.buf.rename, "Rename" },
+    ["<leader>rn"] = { vim.lsp.buf.rename, "[R]e[n]ame" },
+
+    ["<leader>ca"] = {
+      vim.lsp.buf.code_action,
+      "[C]ode [A]ction",
+    },
+
+    ["gD"] = {
+      vim.lsp.buf.declaration,
+      "[G]oto [D]eclaration",
+    },
+
+    ["gd"] = {
+      "<cmd>Telescope lsp_definitions<CR>",
+      "[G]oto [D]efinition",
+    },
+
+    ["gI"] = {
+      "<cmd>Telescope lsp_implementations<CR>",
+      "[G]oto [I]mplementation",
+    },
+
+    ["<leader>D"] = {
+      "<cmd>Telescope lsp_type_definitions<CR>",
+      "Type [D]efinition",
+    },
+
+    ["K"] = {
+      vim.lsp.buf.hover,
+      "Hover Documentation",
+    },
+
+    ["<leader>k"] = {
+      vim.lsp.buf.signature_help,
+      "Signature Documentation",
+    },
+
+    ["gr"] = {
+      function()
+        vim.lsp.buf.references()
+      end,
+      "LSP references",
+    },
+
+    ["<leader>wa"] = {
+      vim.lsp.buf.add_workspace_folder,
+      "[W]orkspace [A]dd Folder",
+    },
+
+    ["<leader>wr"] = {
+      vim.lsp.buf.remove_workspace_folder,
+      "[W]orkspace [R]emove Folder",
+    },
+
+    ["<leader>wl"] = {
+      function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+      end,
+      "[W]orkspace [L]ist Folders",
+    },
   },
 }
 
