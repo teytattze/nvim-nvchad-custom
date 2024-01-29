@@ -16,13 +16,11 @@ local plugins = {
 
   {
     "github/copilot.vim",
+    lazy = false,
   },
 
   {
     "mfussenegger/nvim-jdtls",
-    config = function()
-      require "custom.plugins.configs.jdtls"
-    end,
   },
 
   {
@@ -52,10 +50,12 @@ local plugins = {
   },
 
   {
+    "nvim-telescope/telescope.nvim",
+    lazy = false,
+  },
+
+  {
     "scalameta/nvim-metals",
-    config = function()
-      require "custom.plugins.configs.metals"
-    end,
   },
 
   {
