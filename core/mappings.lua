@@ -130,7 +130,7 @@ M.tabufline = {
       "Goto prev buffer",
     },
 
-    ["<leader>bd"] = {
+    ["<C-d>"] = {
       function()
         require("nvchad.tabufline").close_buffer()
       end,
