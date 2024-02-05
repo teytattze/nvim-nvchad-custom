@@ -188,6 +188,12 @@ M.lspconfig = {
     ["]e"] = { diagnostic_goto_next "ERROR", "Next error" },
     ["[w"] = { diagnostic_goto_prev "WARN", "Previous warning" },
     ["]w"] = { diagnostic_goto_next "WARN", "Next warning" },
+    ["<leader>lf"] = {
+      function()
+        vim.diagnostic.open_float { border = "rounded" }
+      end,
+      "Floating diagnostic",
+    },
 
     ["<leader>rn"] = { vim.lsp.buf.rename, "Rename" },
     ["<leader>ca"] = { vim.lsp.buf.code_action, "Code action" },
