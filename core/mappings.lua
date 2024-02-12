@@ -265,6 +265,17 @@ M.tabufline = {
   },
 }
 
+M.trouble = {
+  n = {
+    ["<leader>xx"] = { "<cmd>TroubleToggle<cr>", "Trouble" },
+    ["<leader>xw"] = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Workspace diagnostics" },
+    ["<leader>xd"] = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "Document diagnostics" },
+    ["<leader>xq"] = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
+    ["<leader>xl"] = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
+    ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
+  },
+}
+
 M.gitsigns = {
   n = {
     ["]c"] = {

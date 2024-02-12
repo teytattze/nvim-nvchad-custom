@@ -15,8 +15,21 @@ local plugins = {
   },
 
   {
+    "folke/trouble.nvim",
+    cmd = {
+      "TroubleToggle",
+    },
+    opts = require "custom.plugins.configs.trouble",
+  },
+
+  {
     "github/copilot.vim",
     lazy = false,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    opts = require "custom.plugins.configs.cmp",
   },
 
   {
