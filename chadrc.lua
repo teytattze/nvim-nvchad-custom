@@ -4,9 +4,9 @@ local M = {}
 M.plugins = "custom.plugins"
 M.mappings = require "custom.core.mappings"
 M.ui = {
-  theme = "onedark",
+  theme = "catppuccin",
 
-  transparency = true,
+  transparency = false,
   lsp_semantic_tokens = true,
 
   nvdash = {
