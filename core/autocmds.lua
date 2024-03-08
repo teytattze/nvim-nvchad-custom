@@ -22,7 +22,7 @@ autocmd("FileType", {
 
 local nvim_metals_group = augroup("nvim-metals", { clear = true })
 autocmd("FileType", {
-  pattern = { "scala", "sbt", "java" },
+  pattern = { "scala", "sbt" },
   callback = function()
     require("custom.plugins.configs.metals").start_or_attach()
   end,
