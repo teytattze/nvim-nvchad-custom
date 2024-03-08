@@ -1,8 +1,10 @@
 local lspconfig = require "lspconfig"
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local plugins_configs_lspconfig = require "plugins.configs.lspconfig"
 
-local servers = { "astro", "cssls", "gopls", "html", "tsserver" }
+local on_attach = plugins_configs_lspconfig.on_attach
+local capabilities = plugins_configs_lspconfig.capabilities
+
+local servers = { "astro", "cssls", "cssmodules_ls", "gopls", "html", "tsserver" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -29,6 +31,16 @@ lspconfig.tailwindcss.setup {
           { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
         },
       },
+    },
+  },
+}
+
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  init_options = {
+    preferences = {
+      importModuleSpecifierPreference = "shortest",
     },
   },
 }
