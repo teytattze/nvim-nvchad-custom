@@ -23,11 +23,6 @@ local plugins = {
   },
 
   {
-    "github/copilot.vim",
-    lazy = false,
-  },
-
-  {
     "hrsh7th/nvim-cmp",
     opts = require "custom.plugins.configs.cmp",
   },
