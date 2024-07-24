@@ -16,7 +16,10 @@ function M.start_or_attach()
   local jdtls_path = mason_packages_path .. "/jdtls"
   local jdtls_config_path = jdtls_path .. "/config_mac"
   local jdtls_lombok_path = jdtls_path .. "/lombok.jar"
-  local jdtls_jar_path = jdtls_path .. "/plugins/org.eclipse.equinox.launcher_1.6.700.v20231214-2017.jar"
+  local jdtls_jar_path = jdtls_path .. "/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar"
+
+  local java_style_base_path = vim.fn.stdpath "config" .. "/lua/custom/languages/java"
+  local java_style_file_name = "buffering-and-dispatch-style.xml"
 
   local config = {}
 
@@ -68,10 +71,9 @@ function M.start_or_attach()
         includeDecompiledSources = true,
       },
       format = {
-        enable = true,
+        enabled = true,
         settings = {
-          url = "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
-          profile = "GoogleStyle",
+          url = java_style_base_path .. "/" .. java_style_file_name,
         },
       },
       eclipse = {
