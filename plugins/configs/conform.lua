@@ -4,13 +4,13 @@ conform.setup {
   lsp_fallback = true,
 
   formatters_by_ft = {
-    css = { { "prettierd", "prettier" } },
-    html = { { "prettierd", "prettier" } },
-    javascript = { { "prettierd", "prettier" } },
-    javascriptreact = { { "prettierd", "prettier" } },
+    css = { { "prettierd" } },
+    html = { { "prettierd" } },
+    javascript = { { "prettierd" } },
+    javascriptreact = { { "prettierd" } },
     lua = { "stylua" },
-    typescript = { { "prettierd", "prettier" } },
-    typescriptreact = { { "prettierd", "prettier" } },
+    typescript = { { "prettierd" } },
+    typescriptreact = { { "prettierd" } },
   },
 
   format_on_save = function(bufnr)
