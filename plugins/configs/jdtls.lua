@@ -1,5 +1,19 @@
 local M = {}
 
+local function get_dirname()
+  return string.gsub(vim.fn.getcwd(), "^.*/", "", 1)
+end
+
+local function get_java_style_path()
+  local base_path = vim.fn.stdpath "config" .. "/lua/custom/languages/java"
+  local project_name_to_style_file_name = {
+    ["buffering-and-dispatch-ui"] = "buffering-and-dispatch-ui-style.xml",
+    ["manual-resortation"] = "manual-resortation-style.xml",
+  }
+  local project_name = get_dirname()
+  return base_path .. "/" .. project_name_to_style_file_name[project_name]
+end
+
 function M.start_or_attach()
   local jdtls = require "jdtls"
   local jdtls_setup = require "jdtls.setup"
@@ -18,8 +32,7 @@ function M.start_or_attach()
   local jdtls_lombok_path = jdtls_path .. "/lombok.jar"
   local jdtls_jar_path = jdtls_path .. "/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar"
 
-  local java_style_base_path = vim.fn.stdpath "config" .. "/lua/custom/languages/java"
-  local java_style_file_name = "buffering-and-dispatch-style.xml"
+  print(get_java_style_path())
 
   local config = {}
 
@@ -73,7 +86,7 @@ function M.start_or_attach()
       format = {
         enabled = true,
         settings = {
-          url = java_style_base_path .. "/" .. java_style_file_name,
+          url = get_java_style_path(),
         },
       },
       eclipse = {
