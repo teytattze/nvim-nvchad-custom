@@ -6,6 +6,7 @@ local buffering_and_dispatch_checkstyle_path = java_project_base_path .. "/_conf
 
 lint.linters_by_ft = {
   java = { "checkstyle" },
+  python = { "pylint" },
 }
 
 lint.linters.checkstyle.config_file = buffering_and_dispatch_checkstyle_path

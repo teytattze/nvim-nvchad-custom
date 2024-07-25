@@ -6,9 +6,11 @@ conform.setup {
   formatters_by_ft = {
     css = { { "prettierd" } },
     html = { { "prettierd" } },
+    json = { { "prettierd" } },
     javascript = { { "prettierd" } },
     javascriptreact = { { "prettierd" } },
     lua = { "stylua" },
+    python = { "isort", "black" },
     typescript = { { "prettierd" } },
     typescriptreact = { { "prettierd" } },
   },
