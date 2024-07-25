@@ -9,6 +9,7 @@ local options = {
     -- html/css
     "astro-language-server",
     "css-lsp",
+    "cssmodules-language-server",
     "html-lsp",
     "tailwindcss-language-server",
 

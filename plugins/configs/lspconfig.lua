@@ -4,7 +4,14 @@ local plugins_configs_lspconfig = require "plugins.configs.lspconfig"
 local on_attach = plugins_configs_lspconfig.on_attach
 local capabilities = plugins_configs_lspconfig.capabilities
 
-local servers = { "astro", "cssls", "cssmodules_ls", "gopls", "html", "tsserver" }
+local servers = {
+  "astro",
+  "cssls",
+  "cssmodules_ls",
+  "gopls",
+  "html",
+  "tsserver",
+}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -14,6 +21,8 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.eslint.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     workingDirectory = {
       mode = "auto",
@@ -21,7 +30,14 @@ lspconfig.eslint.setup {
   },
 }
 
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
 lspconfig.tailwindcss.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     tailwindCSS = {
       experimental = {
